@@ -1,7 +1,7 @@
 package homeWork2;
 
 public class Cat extends Animal {
-    String colorOfEyes;
+    private String colorOfEyes;
 
     public Cat(String name, int age, String food, String location, String colorOfEyes) {
         super(name, age, food, location);
@@ -10,11 +10,11 @@ public class Cat extends Animal {
 
     @Override
     public void makeNoise() {
-        System.out.println(this.name + " say May");
+        System.out.println(this.getName() + " say May");
     }
 
     @Override
     public String eat() {
-        return this.food + " more and more";
+        return this.getFood() + " more and more";
     }
 }

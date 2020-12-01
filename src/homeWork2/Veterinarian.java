@@ -1,8 +1,8 @@
 package homeWork2;
 
 public class Veterinarian {
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Veterinarian(String name, int age) {
         this.name = name;
@@ -10,6 +10,6 @@ public class Veterinarian {
     }
 
     void treatAnimal(Animal animal){
-        System.out.println(animal.name+ " eats: " +animal.getFood());
+        System.out.println(animal.getName()+ " eats: " +animal.getFood());
     }
 }

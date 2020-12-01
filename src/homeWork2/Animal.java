@@ -10,10 +10,10 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Animal {
-    public String name;
-    public int age;
-    public String food;
-    public String location;
+    private String name;
+    private int age;
+    private String food;
+    private String location;
 
  public void makeNoise(){
      System.out.println(this.name + " makeNoise");

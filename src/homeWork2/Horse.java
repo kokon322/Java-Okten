@@ -10,11 +10,12 @@ public class Horse extends Animal {
 
     @Override
     public void makeNoise() {
-        System.out.println(this.name+ " say Egogo");
+        System.out.println(this.getName()+ " say Egogo");
     }
 
     @Override
     public String eat() {
-        return this.food = "seno";
+        this.setFood("seno");
+        return this.getFood();
     }
 }
