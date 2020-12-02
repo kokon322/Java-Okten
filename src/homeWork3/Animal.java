@@ -8,10 +8,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public abstract class Animal {
-    private int age;
     private String name;
+    private int birthdayYear;
+    private int deadDay;
 
     public abstract void showAge();
+
+    public abstract int ageCalculate();
+
     public abstract void showName();
 }
 
