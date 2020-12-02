@@ -7,18 +7,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Triangle extends GeometricFigure {
+public class Square extends GeometricFigure {
+
     private int a;
-    private int b;
-    private int c;
 
     @Override
     public int calculatePerimeter() {
-        return a + b + c;
+        return a * 4;
     }
 
     @Override
     public int calculateSquare() {
-        return a * b * a / c;
+        return a * a;
     }
 }
