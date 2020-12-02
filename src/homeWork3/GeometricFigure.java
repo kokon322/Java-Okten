@@ -11,8 +11,9 @@ public abstract class GeometricFigure {
     private int perimeter;
     private int square;
 
-   public abstract int calculatePerimeter();
-   public abstract int calculateSquare();
+    public abstract int calculatePerimeter();
+
+    public abstract int calculateSquare();
 
 
 }

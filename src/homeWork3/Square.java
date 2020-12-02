@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Square extends GeometricFigure {
-
     private int a;
+
 
     @Override
     public int calculatePerimeter() {
