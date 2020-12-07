@@ -3,33 +3,32 @@ package homeWork4;
 import lombok.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
-@Getter
+
 
 public enum Size {
 
-    XXS{
+    XXS(32) {
         @Override
         public String getDescription() {
             return "This is XXS";
         }
-    }, XS{
+    }, XS(34) {
         @Override
         public String getDescription() {
             return "This is XS";
         }
-    },S{
+    }, S(36) {
         @Override
         public String getDescription() {
             return "This is S";
         }
-    },M{
+    }, M(38) {
         @Override
         public String getDescription() {
             return "This is M";
         }
-    },L{
+    }, L(40) {
         @Override
         public String getDescription() {
             return "This is L";
@@ -37,7 +36,13 @@ public enum Size {
     };
     private int euroSize;
 
+    public void setEuroSize(int euroSize) {
+        this.euroSize = euroSize;
+    }
 
+    public int getEuroSize() {
+        return euroSize;
+    }
 
     public abstract String getDescription();
 }
