@@ -14,10 +14,10 @@ import java.util.ArrayList;
 @ToString
 
 public class Atelie {
-    Dress puma = new Dress(Size.S, 1500, "pink");
-    Pants levis = new Pants(Size.L, 3500, "blue");
-    Tie boss = new Tie(Size.XS, 500, "black");
-    TShirt nike = new TShirt(Size.M, 1350, "wight");
+    Dress puma = new Dress("Puma", Size.S, 1500, "pink");
+    Pants levis = new Pants("Levis", Size.L, 3500, "blue");
+    Tie boss = new Tie("Boss", Size.XS, 500, "black");
+    TShirt nike = new TShirt("Nike", Size.M, 1350, "wight");
     Cloth[] array = {puma, levis, boss, nike};
 
 
