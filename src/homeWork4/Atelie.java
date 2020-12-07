@@ -1,21 +1,43 @@
 package homeWork4;
 
-import homeWork4.cloth.Cloth;
+import homeWork4.cloth.*;
 import homeWork4.interfaces.MenCloth;
+import homeWork4.interfaces.WomanCloth;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.ArrayList;
 
 @Getter
 @Setter
 @ToString
 
 public class Atelie {
-    Cloth [] arrayOfCloth;
+    Dress puma = new Dress(Size.S, 1500, "pink");
+    Pants levis = new Pants(Size.L, 3500, "blue");
+    Tie boss = new Tie(Size.XS, 500, "black");
+    TShirt nike = new TShirt(Size.M, 1350, "wight");
+    Cloth[] array = {puma, levis, boss, nike};
 
-    public Atelie(Cloth[] arrayOfCloth) {
-        this.arrayOfCloth = arrayOfCloth;
+
+    public ArrayList<Cloth> getMenCloth() {
+        ArrayList<Cloth> menCloth = new ArrayList<>();
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i] instanceof MenCloth) {
+                menCloth.add(array[i]);
+            }
+        }
+        return menCloth;
     }
 
-
+    public ArrayList<Cloth> getWomanCloth() {
+        ArrayList<Cloth> womanCloth = new ArrayList<>();
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i] instanceof WomanCloth) {
+                womanCloth.add(array[i]);
+            }
+        }
+        return womanCloth;
+    }
 }
