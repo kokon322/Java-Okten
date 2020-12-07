@@ -1,5 +1,6 @@
-package homeWork4;
+package homeWork4.cloth;
 
+import homeWork4.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

@@ -1,4 +1,4 @@
-package homeWork4;
+package homeWork4.interfaces;
 
 public interface WomanCloth {
     void dressAWoman();
