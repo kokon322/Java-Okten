@@ -13,15 +13,19 @@ public class Main {
         store.addProductsToStore(audi);
         store.addProductsToStore(kettle);
 
-        store.deleteProduct("Audi");
-        store.deleteProduct("Bosch");
-        store.deleteProduct("");
-        store.deleteProduct("Puma");
-        for (Product product : store.allProducts) {
-            System.out.println(product.getName());
-        }
+//        store.deleteProduct("Audi");
+//        store.deleteProduct("Bosch");
+//        store.deleteProduct("");
+//        store.deleteProduct("Puma");
 
-
+//        for (Product product : store.allProducts) {
+//            System.out.println(product.getPrice() + " Цена: " + product.getName());
+//        }
+//        store.uppPrice(TypeOfProducts.CAR);
+//        System.out.println();
+//        for (Product product : store.allProducts) {
+//            System.out.println(product.getPrice() + " Цена: " + product.getName());
+//        }
     }
 
 
