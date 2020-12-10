@@ -48,6 +48,19 @@ public class Store {
         System.out.println(count);
     }
 
+    public  void averagePriceOfAllProducts(){
+        int count = 0;
+        int result = 0;
+        List<Product> resultList = this.allProducts;
+        resultList.addAll(this.primeProduct);
+        for (Product product : resultList) {
+            count += product.getPrice();
+        }
+
+        result = count / (resultList.size()+1);
+        System.out.println(" Средняя стомость товаров в нашем магазине : "+ result);
+    }
+
 
     @Override
     public String toString() {

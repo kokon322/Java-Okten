@@ -41,7 +41,7 @@ public class Main {
 //        for (Product product : store.allProducts) {
 //            System.out.println(product.getPrice() + " Цена: " + product.getName());
 //        }
-        store.calculateSumOfType(TypeOfProducts.CAR);
+        store.averagePriceOfAllProducts();
 
     }
 
