@@ -6,11 +6,13 @@ public class Product {
     private TypeOfProducts typeOfProducts;
     private String name;
     private String city;
+    private int price;
 
-    public Product(TypeOfProducts typeOfProducts, String name, String city) {
+    public Product(TypeOfProducts typeOfProducts, String name, String city, int price) {
         this.typeOfProducts = typeOfProducts;
         this.name = name;
         this.city = city;
+        this.price = price;
     }
 
     public TypeOfProducts getTypeOfProducts() {
@@ -37,6 +39,14 @@ public class Product {
         this.city = city;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -51,11 +61,11 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return typeOfProducts == product.typeOfProducts && Objects.equals(name, product.name) && Objects.equals(city, product.city);
+        return price == product.price && typeOfProducts == product.typeOfProducts && Objects.equals(name, product.name) && Objects.equals(city, product.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(typeOfProducts, name, city);
+        return Objects.hash(typeOfProducts, name, city, price);
     }
 }
