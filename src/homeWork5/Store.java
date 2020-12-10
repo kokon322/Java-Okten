@@ -14,7 +14,7 @@ public class Store {
             this.allProducts.add(x);
         } else if (x.getPrice() > 0 && x.getPrice() > 3000 && x.getName().matches("[\\p{L}| ]+")) {
             this.primeProduct.add(x);
-            System.out.println("Теперь в нашем магазине есть и такой премиум товар "+ x.getName());
+            System.out.println("Теперь в нашем магазине есть и такой премиум товар " + x.getName());
         }
 
     }
@@ -36,6 +36,18 @@ public class Store {
                 element.setPrice(element.getPrice() * 2);
         }
     }
+
+    public void calculateSumOfType(TypeOfProducts x) {
+        int count = 0;
+        List<Product> resultList = this.allProducts;
+        resultList.addAll(this.primeProduct);
+        for (Product product : resultList) {
+            if (product.getTypeOfProducts().equals(x))
+                count ++;
+        }
+        System.out.println(count);
+    }
+
 
     @Override
     public String toString() {
