@@ -4,10 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
@@ -27,13 +24,39 @@ public class Main {
 //        stringSet.add("third");
 //        System.out.println(stringSet);
 
-        Set<Person> set = new TreeSet<>();
-        set.add(new Person(9,"Maryna",LocalDate.of(1997,12,25)));
-        set.add(new Person(25,"Igor", LocalDate.of(1992,06,07)));
-        set.add(new Person(2,"Artem", LocalDate.of(2019,07,10)));
-        set.add(new Person(2,"Vasa", LocalDate.of(2019,07,10)));
+//        Set<Person> set = new TreeSet<>();
+//        set.add(new Person(9,"Maryna",LocalDate.of(1997,12,25)));
+//        System.out.println("---------------------------------------------");
+//        set.add(new Person(25,"Igor", LocalDate.of(1992,06,07)));
+//        System.out.println("---------------------------------------------");
+//        set.add(new Person(2,"Artem", LocalDate.of(2019,07,10)));
+//        System.out.println("---------------------------------------------");
+//        set.add(new Person(2,"Vasil", LocalDate.of(2019,07,10)));
+//
+//        for (Person person : set) {
+//            System.out.println(person);
+//        }
 
-        for (Person person : set) {
+        List<Person> list = new ArrayList<>();
+        list.add(new Person(9,"Maryna",LocalDate.of(1997,12,25)));
+        System.out.println("---------------------------------------------");
+        list.add(new Person(25,"Igor", LocalDate.of(1992,06,07)));
+        System.out.println("---------------------------------------------");
+        list.add(new Person(2,"Artem", LocalDate.of(2019,07,10)));
+        System.out.println("---------------------------------------------");
+        list.add(new Person(2,"Vasil", LocalDate.of(2019,07,10)));
+//        list.sort(new PersonIdComparatoe());
+
+//        list.sort(new Comparator<Person>() {
+//            @Override
+//            public int compare(Person o1, Person o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        });
+
+
+
+        for (Person person : list) {
             System.out.println(person);
         }
 

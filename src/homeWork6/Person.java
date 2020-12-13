@@ -64,12 +64,17 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        System.out.println("compareTo");
-        if (this.id > o.getId()){
-            return 1;
-        }else if (this.id < o.getId()){
-            return -1;
-        }
-        return 0;
+        int compereId = this.id - o.getId();
+        System.out.println(compereId);
+        int compareName = this.name.compareTo(o.getName());
+        System.out.println(compareName);
+        int compareDate = this.birthDay.compareTo(o.getBirthDay());
+        System.out.println(compareDate);
+
+        if (compereId != 0) {
+            return compereId;
+        }else if (compareName !=0){
+            return compareName;
+        }else return compareDate;
     }
 }
