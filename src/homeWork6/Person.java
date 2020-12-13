@@ -49,7 +49,6 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int hashCode() {
-        System.out.println("HashCode");
         return Objects.hash(id, name, birthDay);
     }
 
