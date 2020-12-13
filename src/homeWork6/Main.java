@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args)  {
 //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //        Date x = simpleDateFormat.parse("2020-12-12");
 //        System.out.println(x);
@@ -40,11 +40,11 @@ public class Main {
         List<Person> list = new ArrayList<>();
         list.add(new Person(9,"Maryna",LocalDate.of(1997,12,25)));
         System.out.println("---------------------------------------------");
-        list.add(new Person(25,"Igor", LocalDate.of(1992,06,07)));
+        list.add(new Person(25,"Igor", LocalDate.of(1992,6,7)));
         System.out.println("---------------------------------------------");
-        list.add(new Person(2,"Artem", LocalDate.of(2019,07,10)));
+        list.add(new Person(2,"Artem", LocalDate.of(2019,7,10)));
         System.out.println("---------------------------------------------");
-        list.add(new Person(2,"Vasil", LocalDate.of(2019,07,10)));
+        list.add(new Person(2,"Vasil", LocalDate.of(2019,7,10)));
 //        list.sort(new PersonIdComparatoe());
 
 //        list.sort(new Comparator<Person>() {
