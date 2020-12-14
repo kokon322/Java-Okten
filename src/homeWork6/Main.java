@@ -1,28 +1,44 @@
 package homeWork6;
 
+import java.util.TreeSet;
+
 public class Main {
     public static void main(String[] args) {
-       int minutes = 45;
-       int hours = 2;
+        Schedule schedule = new Schedule(new TreeSet<Seance>());
 
-        Time boratMovieDuration = new Time();
-        boratMovieDuration.setMin(minutes);
-        boratMovieDuration.setHour(hours);
+        Time timeBorat = new Time();
+        timeBorat.setHour(2);
+        timeBorat.setMin(25);
+
+        Time timeXXX = new Time();
+        timeXXX.setHour(1);
+        timeXXX.setMin(15);
 
         Movie borat = new Movie();
+        borat.setDuration(timeBorat);
         borat.setTitle("Borat");
-        borat.setDuration(boratMovieDuration);
 
-        System.out.println("This is movie: "+borat);
+        Movie XXX = new Movie();
+        XXX.setDuration(timeXXX);
+        XXX.setTitle("XXX");
 
-        Time startTime = new Time();
-        startTime.setHour(23);
-        startTime.setMin(40);
+        Time starsBorat = new Time();
+        starsBorat.setHour(12);
+        starsBorat.setMin(30);
 
-        System.out.println("This is start time: " + startTime);
-        Seance one = new Seance(borat, startTime);
+        Time starsXXX = new Time();
+        starsXXX.setHour(15);
+        starsXXX.setMin(50);
 
-        System.out.println("This is a season: "+ one);
+        Seance one = new Seance(borat, starsBorat);
+        Seance two = new Seance(XXX,starsXXX);
+
+        schedule.addSeance(two);
+        schedule.addSeance(one);
+
+
+        schedule.printSchedule();
+
 
     }
 }

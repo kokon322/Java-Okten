@@ -1,8 +1,9 @@
 package homeWork6;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Seance {
+public class Seance implements Comparable<Seance> {
     private Movie movie;
     private Time startTime;
     private Time endTime;
@@ -46,6 +47,7 @@ public class Seance {
                 '}';
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,5 +59,17 @@ public class Seance {
     @Override
     public int hashCode() {
         return Objects.hash(movie, startTime, endTime);
+    }
+
+
+    @Override
+    public int compareTo(Seance o) {
+        if (this.startTime.getHour() < o.startTime.getHour()) {
+            return -1;
+        } else if (this.startTime.getHour() > o.startTime.getHour()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

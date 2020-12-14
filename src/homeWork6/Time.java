@@ -22,6 +22,7 @@ public class Time {
             System.out.println("Ты ввел не правельное время");
         }
     }
+
     public int getMin() {
         return min;
     }
@@ -39,10 +40,10 @@ public class Time {
         Time result = new Time();
         int resultMinute = this.getMin() + duration.getMin();
         int resultHour = this.getHour() + duration.getHour();
-        if (resultMinute > 59){
+        if (resultMinute > 59) {
             resultMinute -= 60;
         }
-        if (resultHour > 23){
+        if (resultHour > 23) {
             resultHour -= 23;
         }
         result.setMin(resultMinute);
