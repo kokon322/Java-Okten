@@ -2,12 +2,12 @@ package homeWork6;
 
 import java.util.Objects;
 
-public class Season {
+public class Seance {
     private Movie movie;
     private Time startTime;
     private Time endTime;
 
-    public Season(Movie movie, Time startTime) {
+    public Seance(Movie movie, Time startTime) {
         this.movie = movie;
         this.startTime = startTime;
         this.endTime = startTime.calculateEndTime(movie.getDuration());
@@ -50,7 +50,7 @@ public class Season {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Season season = (Season) o;
+        Seance season = (Seance) o;
         return Objects.equals(movie, season.movie) && Objects.equals(startTime, season.startTime) && Objects.equals(endTime, season.endTime);
     }
 

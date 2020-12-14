@@ -3,23 +3,13 @@ package homeWork6;
 import java.util.Objects;
 
 public class Time {
-    private int min;
     private int hour;
+    private int min;
+
 
     public Time() {
     }
 
-    public int getMin() {
-        return min;
-    }
-
-    public void setMin(int min) {
-        if (min <= 59 && min >= 0) {
-            this.min = min;
-        } else {
-            System.out.println("Ты ввел не правельное время");
-        }
-    }
 
     public int getHour() {
         return hour;
@@ -32,11 +22,31 @@ public class Time {
             System.out.println("Ты ввел не правельное время");
         }
     }
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        if (min <= 59 && min >= 0) {
+            this.min = min;
+        } else {
+            System.out.println("Ты ввел не правельное время");
+        }
+    }
+
 
     public Time calculateEndTime(Time duration) {
         Time result = new Time();
-        result.setMin(this.getMin() + duration.getMin());
-        result.setHour(this.getHour() + duration.getHour());
+        int resultMinute = this.getMin() + duration.getMin();
+        int resultHour = this.getHour() + duration.getHour();
+        if (resultMinute > 59){
+            resultMinute -= 60;
+        }
+        if (resultHour > 23){
+            resultHour -= 23;
+        }
+        result.setMin(resultMinute);
+        result.setHour(resultHour);
         return result;
     }
 
