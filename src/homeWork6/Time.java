@@ -9,13 +9,16 @@ public class Time {
     public Time() {
     }
 
-
     public int getMin() {
         return min;
     }
 
     public void setMin(int min) {
-        this.min = min;
+        if (min <= 59 && min >= 0) {
+            this.min = min;
+        } else {
+            System.out.println("Ты ввел не правельное время");
+        }
     }
 
     public int getHour() {
@@ -23,7 +26,18 @@ public class Time {
     }
 
     public void setHour(int hour) {
-        this.hour = hour;
+        if (hour <= 23 && hour >= 0) {
+            this.hour = hour;
+        } else {
+            System.out.println("Ты ввел не правельное время");
+        }
+    }
+
+    public Time calculateEndTime(Time duration) {
+        Time result = new Time();
+        result.setMin(this.getMin() + duration.getMin());
+        result.setHour(this.getHour() + duration.getHour());
+        return result;
     }
 
     @Override
