@@ -7,8 +7,6 @@ import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        Schedule schedule = new Schedule();
-
         Time timeBorat = new Time();
         timeBorat.setHour(2);
         timeBorat.setMin(25);
@@ -41,9 +39,11 @@ public class Main {
         smartCinema.addSeances(Days.FRIDAY, two, one);
         smartCinema.addSeances(Days.MONDAY, one, two);
         smartCinema.addSeances(Days.THURSDAY, one, two);
-
-
         smartCinema.removeMovie(xxx);
+        smartCinema.removeSeance(one, Days.THURSDAY);
+
+
+
         System.out.println(smartCinema);
 
 
