@@ -40,13 +40,12 @@ public class Seance implements Comparable<Seance> {
 
     @Override
     public String toString() {
-        return "Season{" +
+        return "Seance{" +
                 "movie=" + movie +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 '}';
     }
-
 
     @Override
     public boolean equals(Object o) {

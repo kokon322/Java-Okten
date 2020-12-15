@@ -1,10 +1,13 @@
 package homeWork6;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        Schedule schedule = new Schedule(new TreeSet<Seance>());
+        Schedule schedule = new Schedule();
 
         Time timeBorat = new Time();
         timeBorat.setHour(2);
@@ -18,9 +21,9 @@ public class Main {
         borat.setDuration(timeBorat);
         borat.setTitle("Borat");
 
-        Movie XXX = new Movie();
-        XXX.setDuration(timeXXX);
-        XXX.setTitle("XXX");
+        Movie xxx = new Movie();
+        xxx.setDuration(timeXXX);
+        xxx.setTitle("XXX");
 
         Time starsBorat = new Time();
         starsBorat.setHour(12);
@@ -31,13 +34,19 @@ public class Main {
         starsXXX.setMin(50);
 
         Seance one = new Seance(borat, starsBorat);
-        Seance two = new Seance(XXX,starsXXX);
-
-        schedule.addSeance(two);
-        schedule.addSeance(one);
+        Seance two = new Seance(xxx,starsXXX);
 
 
-        schedule.printSchedule();
+        Cinema smartCinema = new Cinema();
+        smartCinema.addSeances(Days.FRIDAY,two,one);
+        smartCinema.addSeances(Days.MONDAY,one,two);
+        smartCinema.addSeances(Days.THURSDAY,one,two);
+
+
+       smartCinema.removeMovie(xxx);
+        System.out.println(smartCinema);
+
+
 
 
     }
