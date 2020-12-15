@@ -29,36 +29,36 @@ public class Cinema {
         }
     }
 
-    public void addSeance (Seance seance, Days day){
-        if (scheduleByDays.isEmpty() || !scheduleByDays.containsKey(day)){
+    public void addSeance(Seance seance, Days day) {
+        if (scheduleByDays.isEmpty() || !scheduleByDays.containsKey(day)) {
             Schedule schedule = new Schedule();
             schedule.addSeance(seance);
             this.scheduleByDays.put(day, schedule);
         } else {
             for (Map.Entry<Days, Schedule> daysScheduleEntry : scheduleByDays.entrySet()) {
-                if (daysScheduleEntry.getKey().equals(day)){
+                if (daysScheduleEntry.getKey().equals(day)) {
                     daysScheduleEntry.getValue().addSeance(seance);
                 }
             }
         }
     }
 
-    public void removeMovie(Movie movie){
+    public void removeMovie(Movie movie) {
         Map<Days, Schedule> mapa = new TreeMap<>(scheduleByDays);
         for (Map.Entry<Days, Schedule> daysScheduleEntry : mapa.entrySet()) {
             Schedule schedule = daysScheduleEntry.getValue();
             Set<Seance> seances = new TreeSet<>(schedule.getSeances());
             for (Seance seance : seances) {
-                                if (seance.getMovie().equals(movie)){
+                if (seance.getMovie().equals(movie)) {
                     scheduleByDays.get(daysScheduleEntry.getKey()).removeSeance(seance);
                 }
             }
         }
     }
 
-    public void removeSeance (Seance seance, Days day){
+    public void removeSeance(Seance seance, Days day) {
         for (Map.Entry<Days, Schedule> daysScheduleEntry : scheduleByDays.entrySet()) {
-            if (daysScheduleEntry.getKey().equals(day)){
+            if (daysScheduleEntry.getKey().equals(day)) {
                 daysScheduleEntry.getValue().removeSeance(seance);
             }
         }

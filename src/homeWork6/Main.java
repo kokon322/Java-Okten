@@ -34,19 +34,17 @@ public class Main {
         starsXXX.setMin(50);
 
         Seance one = new Seance(borat, starsBorat);
-        Seance two = new Seance(xxx,starsXXX);
+        Seance two = new Seance(xxx, starsXXX);
 
 
         Cinema smartCinema = new Cinema();
-        smartCinema.addSeances(Days.FRIDAY,two,one);
-        smartCinema.addSeances(Days.MONDAY,one,two);
-        smartCinema.addSeances(Days.THURSDAY,one,two);
+        smartCinema.addSeances(Days.FRIDAY, two, one);
+        smartCinema.addSeances(Days.MONDAY, one, two);
+        smartCinema.addSeances(Days.THURSDAY, one, two);
 
 
-       smartCinema.removeMovie(xxx);
+        smartCinema.removeMovie(xxx);
         System.out.println(smartCinema);
-
-
 
 
     }
