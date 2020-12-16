@@ -2,10 +2,7 @@ package homeWork7;
 
 import homeWork1.Car;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -95,5 +92,19 @@ public class Main {
         //4. Відфільтрувати у кого ім я починається на "І"//
 //       List<Person> personI =  persons.stream().filter(person -> person.getName().startsWith("І")).collect(Collectors.toList());
 //       System.out.println(personI);
+        //5.Відфільтрувати у кого ім я починається на "І" і повернути айдішки
+//        List<Integer> idWithNameStartI = persons.stream().filter(person -> person.getName().startsWith("I"))
+//                .map(Person::getId).collect(Collectors.toList());
+//        System.out.println(idWithNameStartI);
+        //6. Вибрати три перших елементи та повернути їх у зворотньому порядку
+//        List<Person> threeFirst = persons.stream().limit(3)
+//                .sorted((o1, o2) -> o2.getName()
+//                .compareTo(o1.getName()))
+//                .collect(Collectors.toList());
+//        System.out.println(threeFirst);
+
+//        String s1 = persons.stream().map(Person::getName).reduce((s, s2) -> s+" "+s2).get();
+//        System.out.println(s1);
+
     }
 }
