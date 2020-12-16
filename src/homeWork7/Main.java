@@ -1,9 +1,6 @@
 package homeWork7;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,31 +25,38 @@ public class Main {
 
 //        System.out.println(personPredicate.test(igor));
 
-        Consumer<Person> personConsumer = new Consumer<Person>() {
-            @Override
-            public void accept(Person person) {
-                System.out.println("id person: " + person.getId() + ", name person: " + person.getName());
-            }
-        };
+//        Consumer<Person> personConsumer = new Consumer<Person>() {
+//            @Override
+//            public void accept(Person person) {
+//                System.out.println("id person: " + person.getId() + ", name person: " + person.getName());
+//            }
+//        };
+//
+//        personConsumer.accept(maryna);
+//
+//        Supplier<Person> personSupplier = new Supplier<Person>() {
+//            @Override
+//            public Person get() {
+//                return new Person(2, "Vasa");
+//            }
+//        };
+//
+//        personConsumer.accept(personSupplier.get());
+//
+//        Function<Person, String > personPersonFunction = new Function<Person, String>() {
+//            @Override
+//            public String apply(Person person) {
+//                return person.getId()+ " : "+ person.getName();
+//            }
+//        };
+//
+//        System.out.println(personPersonFunction.apply(igor));
 
-        personConsumer.accept(maryna);
+        Predicate<Person> personPredicate = person -> person.getName().startsWith("I");
+        Function<Person, String> personStringFunction = person -> person.getId()+ person.getName();
+        Consumer<Person> personConsumer = person -> System.out.println(person.getId() + " name: " + person.getName());
+        BiFunction<Person, Person, String> personPersonStringBiFunction = (person, person2) -> person.getName() + " "+ person2.getName();
 
-        Supplier<Person> personSupplier = new Supplier<Person>() {
-            @Override
-            public Person get() {
-                return new Person(2, "Vasa");
-            }
-        };
 
-        personConsumer.accept(personSupplier.get());
-
-        Function<Person, String > personPersonFunction = new Function<Person, String>() {
-            @Override
-            public String apply(Person person) {
-                return person.getId()+ " : "+ person.getName();
-            }
-        };
-
-        System.out.println(personPersonFunction.apply(igor));
     }
 }
