@@ -56,10 +56,25 @@ public class Main {
         }
         String person = parseList.get(0);
         String [] splitPerson = person.split(" . ");
+        int id = Integer.parseInt(splitPerson[0]);
+        String name = splitPerson[1];
+        String [] stringAgeAndCity = splitPerson[2].split(", ");
+        int age = Integer.parseInt(stringAgeAndCity[0]);
+        String city = stringAgeAndCity[1];
 
-        for (int i = 0; i < splitPerson.length; i++) {
-            System.out.println(splitPerson[i]);
-        }
+//        for (int i = 0; i < splitPerson.length; i++) {
+//            System.out.println(splitPerson[i]);
+//        }
+        Person petro = new Person();
+        petro.setId(id);
+        petro.setName(name);
+        petro.setAge(age);
+        petro.setCity(city);
+        System.out.println(petro);
+
+
+
+
 
 
 
