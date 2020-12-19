@@ -44,6 +44,27 @@ public class Main {
 //    }
         File file = new File("1.txt");
 
+        List<String> parseList = new ArrayList<>();
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))){
+            String s = null;
+            while ((s = bufferedReader.readLine()) != null){
+                parseList.add(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String person = parseList.get(0);
+        String [] splitPerson = person.split(" . ");
+
+        for (int i = 0; i < splitPerson.length; i++) {
+            System.out.println(splitPerson[i]);
+        }
+
+
+
+
+
 //        try (FileOutputStream fileOutputStream = new FileOutputStream(file,true)) { // try with resurces;
 //            fileOutputStream.write("Hello World!".getBytes());
 //        } catch (IOException e) {
@@ -84,6 +105,8 @@ public class Main {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+
+
 
     }
 
