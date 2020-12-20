@@ -7,16 +7,21 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//
-//        1. Petro, 24, 12-12-1996, Lviv. Pets:
-//        1. Tuzik, dog;
-//        2. Murka, cat;
-//        2. Ira, 18, 05-04-2002, Kyiv: Pets:
-//        3. Pikachu, fish;
-//        4. Kakashka, turtle;
+
+//        1. Petro, 28, Kyiv.Pets:1. Tuzik, dog;
+//        2. Murca, cat;
+
+//        2. Ira, 19, Lviv.Pets:1. Pikachu, fish;
+//        2. Vasya, turtle;
+
+//        3. Nastya, 25, Gaisin.Pets:1. Akula, fish;
+//        2. PesSutuluy, dog;
+
+//        3. Maryna, 26, Hutora.Pets:1. Gera, dog;
+//        2. Bady, dog;
 //
 //        Наповнюєте файл відповідно певному формату і згідно з цього формату пишете метод,
-//        який розпарсить дані з файлу і створить відповідних Person i Pet
+//        який розпарсить дані з файлу і створить відповідних Person i Pet.
 
         File file = new File("1.txt");
         List<Person> personList = new ArrayList<>();

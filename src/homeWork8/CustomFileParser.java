@@ -9,6 +9,9 @@ import java.util.List;
 
 public class CustomFileParser {
     public static final String REPLACEMENT = "";
+    public static final String SPACE = " ";
+    public static final String DOT = ".";
+    public static final String COMMA = ",";
 
     public List<String> readFile(File file) {
         List<String> parseList = new ArrayList<>();
@@ -28,12 +31,12 @@ public class CustomFileParser {
     }
 
     public Person parsePerson(String line) {
-        String[] firstPerson = line.split(" ");
+        String[] firstPerson = line.split(SPACE);
         Person person = new Person();
-        person.setId(Integer.parseInt(firstPerson[0].replace(".", REPLACEMENT)));
+        person.setId(Integer.parseInt(firstPerson[0].replace(DOT, REPLACEMENT)));
         person.setName(firstPerson[1].replace(",", REPLACEMENT));
-        person.setAge(Integer.parseInt(firstPerson[2].replace(",", REPLACEMENT)));
-        person.setCity(firstPerson[3].replace(".", REPLACEMENT));
+        person.setAge(Integer.parseInt(firstPerson[2].replace(COMMA, REPLACEMENT)));
+        person.setCity(firstPerson[3].replace(DOT, REPLACEMENT));
         return person;
     }
 
@@ -41,10 +44,10 @@ public class CustomFileParser {
         String[] splitedLine = line.split("; ");
         List<Pet> petList = new ArrayList<>();
         for (String s : splitedLine) {
-            String[] result = s.split(" ");
+            String[] result = s.split(SPACE);
             Pet pet = new Pet();
-            pet.setId(Integer.parseInt(result[0].replace(".", REPLACEMENT)));
-            pet.setName(result[1].replace(",", REPLACEMENT));
+            pet.setId(Integer.parseInt(result[0].replace(DOT, REPLACEMENT)));
+            pet.setName(result[1].replace(COMMA, REPLACEMENT));
             pet.setType(result[2]);
             petList.add(pet);
         }
