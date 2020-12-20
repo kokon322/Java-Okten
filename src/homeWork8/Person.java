@@ -55,12 +55,12 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id == person.id && age == person.age && Objects.equals(name, person.name) && Objects.equals(city, person.city);
+        return id == person.id && age == person.age && Objects.equals(name, person.name) && Objects.equals(city, person.city) && Objects.equals(pet, person.pet);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, age, city);
+        return Objects.hash(id, name, age, city, pet);
     }
 
     @Override
@@ -70,6 +70,7 @@ public class Person {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", city='" + city + '\'' +
+                ", pet=" + pet +
                 '}';
     }
 }

@@ -4,7 +4,6 @@ package homeWork8;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,35 +19,18 @@ public class Main {
 //        який розпарсить дані з файлу і створить відповідних Person i Pet
 
         File file = new File("1.txt");
+        List<Person> personList = new ArrayList<>();
+        CustomFileParser parser = new CustomFileParser();
+        List<String> strings = parser.readFile(file);
 
-        List<String> parseList = new ArrayList<>();
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
-            String s = null;
-            while ((s = bufferedReader.readLine()) != null) {
-                parseList.add(s);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (String string : strings) {
+            String[] strings1 = parser.parsLine(string);
+            Person person = parser.parsePerson(strings1[0]);
+            person.setPet(parser.parsePet(strings1[1]));
+            personList.add(person);
         }
-        String[] firstPerson = parseList.get(0).split(" ");
-        Person petro = new Person();
-        petro.setId(Integer.parseInt(firstPerson[0].replace(".","")));
-        petro.setName(firstPerson[1].replace(",",""));
-        petro.setAge(Integer.parseInt(firstPerson[2].replace(",","")));
-        petro.setCity(firstPerson[3].replace(".",""));
-
-        System.out.println(firstPerson[8]);
-        Pet tuzik = new Pet();
-        tuzik.setId(Integer.parseInt(firstPerson[5].replace(".","")));
-        tuzik.setName(firstPerson[6].replace(",",""));
-        tuzik.setType(firstPerson[7].replace(";",""));
-        Pet murca = new Pet();
-        murca.setId(Integer.parseInt(firstPerson[8].replace(".","")));
-        murca.setName(firstPerson[9].replace(",",""));
-        murca.setType(firstPerson[10].replace(";",""));
-
-        List <Pet> petushary = new ArrayList<>();
+        personList.forEach(System.out::println);
 
     }
 
