@@ -1,2 +1,3 @@
-1 . Petro , 28, Kyiv . Pets : 1. Tuzik, dog; 2. Murca, cat;
-2 . Ira , 19, Lviv . Pets : 1. Pikachu, fish; 2. Vasya, turtle;
+1. Petro, 28, Kyiv. Pets: 1. Tuzik, dog; 2. Murca, cat;
+2. Ira, 19, Lviv. Pets: 1. Pikachu, fish; 2. Vasya, turtle;
+3. Nastya, 25, Gaisin. Pets: 1. Akula, fish; 2. PesSutuluy, dog;

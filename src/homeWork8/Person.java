@@ -1,5 +1,6 @@
 package homeWork8;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Person {
@@ -7,16 +8,7 @@ public class Person {
     private String name;
     private int age;
     private String city;
-
-    public Person(int id, String name, int age, String city) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.city = city;
-    }
-
-    public Person() {
-    }
+    private List<Pet> pet;
 
     public int getId() {
         return id;
@@ -48,6 +40,14 @@ public class Person {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public List<Pet> getPet() {
+        return pet;
+    }
+
+    public void setPet(List<Pet> pet) {
+        this.pet = pet;
     }
 
     @Override
