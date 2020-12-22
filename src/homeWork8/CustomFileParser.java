@@ -34,7 +34,7 @@ public class CustomFileParser {
         String[] firstPerson = line.split(SPACE);
         Person person = new Person();
         person.setId(Integer.parseInt(firstPerson[0].replace(DOT, REPLACEMENT)));
-        person.setName(firstPerson[1].replace(",", REPLACEMENT));
+        person.setName(firstPerson[1].replace(COMMA, REPLACEMENT));
         person.setAge(Integer.parseInt(firstPerson[2].replace(COMMA, REPLACEMENT)));
         person.setCity(firstPerson[3].replace(DOT, REPLACEMENT));
         return person;
