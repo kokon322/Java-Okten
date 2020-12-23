@@ -1,13 +1,17 @@
 package Practice1;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Main {
 
-    public static volatile boolean flag = true;
+    //    public static volatile boolean flag = true;
+    public static volatile AtomicInteger a = new AtomicInteger(0);
 
     public static void main(String[] args) throws InterruptedException {
 //        MyThread myThread = new MyThread("Full-thread-1", "Igor");
 //        myThread.start();
-
+//
+//        JOIN
 //        Runnable runnable = () -> {
 //            try {
 //                for (int i = 0; i < 5; i++) {
@@ -42,24 +46,40 @@ public class Main {
 //        for (int i = 0; i < 4; i++) {
 //            System.out.println(Thread.currentThread().getName() + ": " + i);
 //        }
+//
+//        volatile FLAG
+//        Thread thread = new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                System.out.println("value: " + i);
+//            }
+//            flag = false;
+//            System.out.println("Flag status change to: " + flag);
+//        });
+//
+//        Thread thread1 = new Thread(() -> {
+//            int x = 0;
+//            while (flag) {
+//                x++;
+//            }
+//            System.out.println("value X : " + x);
+//        });
+//        thread.start();
+//        thread1.start();
+//
+//        volatile INT
 
-        Thread thread = new Thread(()->{
-            for (int i = 0; i < 5; i++) {
-                System.out.println("value: "+ i);
+        Runnable runnable = () -> {
+            while (a.get() < 10) {
+                System.out.println(Thread.currentThread().getName() + " : " + a.incrementAndGet());
             }
-            flag = false;
-            System.out.println("Flag status change to: "+  flag);
-        });
+        };
+        Thread thread = new Thread(runnable, "Thread - 1");
+        Thread thread1 = new Thread(runnable, "Thread - 2");
 
-        Thread thread1 = new Thread(()->{
-            int x =0;
-            while(flag){
-                x++;
-            }
-            System.out.println("value X : "+x);
-        });
         thread.start();
         thread1.start();
-
+        thread.join();
+        thread1.join();
+        System.out.println(a);
     }
 }
