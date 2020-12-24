@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Main {
 
     //    public static volatile boolean flag = true;
-    public static volatile AtomicInteger a = new AtomicInteger(0);
+    public static AtomicInteger a = new AtomicInteger(0);
 
     public static void main(String[] args) throws InterruptedException {
 //        MyThread myThread = new MyThread("Full-thread-1", "Igor");
@@ -67,19 +67,36 @@ public class Main {
 //        thread1.start();
 //
 //        volatile INT
+//        AtomicInteger
+//        Runnable runnable = () -> {
+//            while (a.get() < 10) {
+//                System.out.println(Thread.currentThread().getName() + " : " + a.incrementAndGet());
+//            }
+//        };
+//        Thread thread = new Thread(runnable, "Thread - 1");
+//        Thread thread1 = new Thread(runnable, "Thread - 2");
+//
+//        thread.start();
+//        thread1.start();
+//        thread.join();
+//        thread1.join();
+//        System.out.println(a);
 
-        Runnable runnable = () -> {
-            while (a.get() < 10) {
-                System.out.println(Thread.currentThread().getName() + " : " + a.incrementAndGet());
-            }
-        };
-        Thread thread = new Thread(runnable, "Thread - 1");
-        Thread thread1 = new Thread(runnable, "Thread - 2");
+        BankAccount bankAccount = new BankAccount(50);
+        CreditCard creditCard1 = new CreditCard(bankAccount);
+        CreditCard creditCard2 = new CreditCard(bankAccount);
 
-        thread.start();
-        thread1.start();
-        thread.join();
-        thread1.join();
-        System.out.println(a);
+        CardOwner man = new CardOwner(creditCard1);
+        CardOwner woman = new CardOwner(creditCard2);
+
+        Thread manThread = new Thread(man, " Man");
+        Thread womanThread = new Thread(woman, " Woman");
+
+        womanThread.start();
+        manThread.start();
+
+//        manThread.join();
+//        womanThread.join();
+
     }
 }
